@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Casino Game</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="squares">
+            <div class="square" id="one"></div>
+            <div class="square" id="two"></div>
+            <div class="square" id="three"></div>
+        </div>
+        <h3 class="money">Twoje środki: <div class="cash"></div>
+        </h3>
+        <div class="rules">
+            <p>Zasady:
+                <br>
+                3 jednakowe kolory: wygrana 100 $
+                <br>
+                2 jednakowe kolory: wygrana 1 $
+                <br>
+                3 różne kolory: przegrana 10 $
+            </p>
+        </div>
+        <h4 class="bet">Postaw zakład:</h4>
+        <input id="amount" type="number" required> $
+        <br>
+        <button class="play">Zagraj</button>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

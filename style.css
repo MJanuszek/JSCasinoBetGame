@@ -1,0 +1,25 @@
+body {
+    background-color: #cbcbcb;
+    font-size: 30px;
+    box-sizing: border-box;
+}
+.wrapper {
+    margin-top: 5vh;
+    margin-left: 10vw;
+}
+
+.square {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+}
+#amount {
+   font-size: 35px;
+   max-width: 60px;
+}
+.play {
+    font-size: 30px;
+    margin-top: 3vh;
+    padding: 20px 25px;
+}
