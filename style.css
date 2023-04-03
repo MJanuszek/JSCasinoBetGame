@@ -16,7 +16,7 @@ body {
 }
 #amount {
    font-size: 35px;
-   max-width: 60px;
+   max-width: 100px;
 }
 .play {
     font-size: 30px;

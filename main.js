@@ -1,13 +1,15 @@
 const squares = document.querySelectorAll("div.square");
-const play = document.querySelector(".play");
+const playBtn = document.querySelector(".play");
 const betResult = document.querySelector(".bet-result");
 const money = document.querySelector(".money");
+// input:
 let amount = document.getElementById("amount");
 
 let bet = 0;
 
 amount.addEventListener("change", () => {
-    bet = amount.value;
+    bet = parseInt(amount.value);
+    playBtn.disabled = false;
 });
 let number = 200;
 let won = 0;
@@ -33,7 +35,7 @@ const compareColorResult = () => {
         number -= bet;
         betResult.textContent = `Przegrałeś ${bet} `;
         money.textContent = `Twoje środki: ${number}`
-    } else if(result.length === 2){
+    } else if(result.length === 2){ 
         betResult.textContent = `Ani straty ani zysku `;
     } else if(result.length === 1){
         number += bet;
@@ -48,18 +50,23 @@ const compareColorResult = () => {
     if(amount.value === "") {
         betResult.textContent = "Postaw zakład"
         return
-    }
-    if(number <=0){
-        console.log("Masz za mało środków")
+    } else if (amount.value > number){
+        console.log("Zakład przekracza dostepne środki")
+        playBtn.disabled = true;
     }
  }
 
-const startGame = () => {
-    checkAllNumbers()
+const startGame = (e) => {
+    e.preventDefault();
+    if(number <=0){
+        console.log("Masz za mało środków")
+       playBtn.disabled = true;
+    }
+    checkAllNumbers();
     betResult.textContent = `Wynik: `
     amount.value = "";
     changeColors();
     compareColorResult();
 }
 
-play.addEventListener("click", startGame);
+playBtn.addEventListener("click", startGame);
